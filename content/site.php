@@ -38,6 +38,19 @@ return [
     // content/pages.php key to match.
     'servicesHub' => '/servicios/',
 
+    // Hub and fixed-page paths, read through site_path(). Leave out a key to keep
+    // the template's default; a Swedish site sets e.g. 'contact' => '/kontakt/'
+    // and renames the route directory (and its content/pages.php key) to match.
+    'paths' => [
+        'contact' => '/contacto/',
+        'tools'   => '/herramientas/',
+        'guides'  => '/guias/',
+        'blog'    => '/blog/',
+        'prices'  => '/precios/',
+        'privacy' => '/privacidad/',
+        'terms'   => '/terminos/',
+    ],
+
     'legalName'   => null,                       // registered legal name
     'description' => 'Empresa de ejemplo: reemplace este texto por lo que hace el negocio, '
                    . 'en una frase que un cliente reconozca.',
@@ -55,7 +68,10 @@ return [
     'street'  => null,
     'city'    => null,
     'country' => null,                           // defaults to the market's country
-    'hours'   => null,                           // display string, e.g. 'Lun–Vie 8:00–17:30'
+    'hours'   => null,
+    // Regions served, for JSON-LD areaServed. Empty = the whole country.
+    // e.g. ['Stockholms län', 'Stockholm', 'Nynäshamn']
+    'areaServed' => [],                           // display string, e.g. 'Lun–Vie 8:00–17:30'
 
     // schema.org openingHoursSpecification entries, added when hours are confirmed
     'openingHours' => [],
